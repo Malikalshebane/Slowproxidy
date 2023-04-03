@@ -213,358 +213,366 @@ if game.PlaceId == 9096881148 then
             end
         end
     end
-    function Autoparryss()
-        
-    --Fist
-    local punch1 = "rbxassetid://10811740596"
-    local punch2 = "rbxassetid://10811742187"
-    local punch3 = "rbxassetid://10811749715"
-    local punch4 = "rbxassetid://10811751125"
-    local punch5 = "rbxassetid://10811752253"
-    local heavypunch6 = "rbxassetid://10811661419"
-    --Heavy Sword
-    local hswing1 = "rbxassetid://11329263773"
-    local hswing2 = "rbxassetid://11329264847"
-    local hswing3 = "rbxassetid://11329265450"
-    local hswing4 = "rbxassetid://11329266198"
-    local Heavyhswing5 = "rbxassetid://11329261568"
-    --Dual Sword
-    local dswing1 = "rbxassetid://12570069533"
-    local dswing2 = "rbxassetid://12570070512"
-    local dswing3 = "rbxassetid://12570071355"
-    local dswing4 = "rbxassetid://12570077038"
-    local dswing5 = "rbxassetid://12570077941"
-    local dswing6 = "rbxassetid://12570078708"
-    local Heavydswing7 = "rbxassetid://12570079661"
-    --Two Hand Sword
-    local tswing1 = "rbxassetid://9097941205"
-    local tswing2 = "rbxassetid://9097943535"
-    local tswing3 = "rbxassetid://9097949489"
-    local tswing4 = "rbxassetid://9097953263"
-    local tswing5 = "rbxassetid://9097956778"
-    local Heavytswing6 = "rbxassetid://9105174060"
-    --Vergil 
-    local vswing1 = "rbxassetid://9963911059"
-    local vswing2 = "rbxassetid://9963949721"
-    local vswing3 = "rbxassetid://9964235353"
-    local vswing4 = "rbxassetid://9964685390"
-    local vswing5 = "rbxassetid://9964732053"
-    local Heavyvswing6 = "rbxassetid://9964798760"
-    --One hand sword
-    local Heavyoswing1 = "rbxassetid://9964798760"
-    --Mashima
-    local mswing1 = "rbxassetid://10811740596"
-    local mswing2 = "rbxassetid://10811742187"
-    local mswing3 = "rbxassetid://10811749715"
-    local mswing4 = "rbxassetid://10811751125"
-    local mswing5 = "rbxassetid://10811752253"
-    local Heavymswing6 = "rbxassetid://11710567470"
-    --Hollow
-    local hoswing1 = "rbxassetid://9831765265"
-    local hoswing2 = "rbxassetid://9831767207"
-    local hoswing3 = "rbxassetid://9831768303"
-    local hoswing4 = "rbxassetid://9831772772"
-    local hoswing5 = "rbxassetid://9831778646"
-    local Heavyhoswing6 = "rbxassetid://9831855855"
-    --Taratect
-    local taraswing1 = "rbxassetid://9963911059"
-    local taraswing2 = "rbxassetid://9963949721"
-    local taraswing3 = "rbxassetid://9964235353"
-    local taraswing4 = "rbxassetid://9964685390"
-    local taraswing5 = "rbxassetid://9964732053"
-    local Heavytaraswing6 = "rbxassetid://9964798760"
-    --DualGun
-    local gunswing1 = "rbxassetid://12866837215"
-    local gunswing2 = "rbxassetid://12866838575"
-    local gunswing3 = "rbxassetid://12866842958"
-    local gunswing4 = "rbxassetid://12866844005"
-    local gunswing5 = "rbxassetid://12866845125"
-    local Heavygunswing6 = "rbxassetid://12866849583"
-    --Skills--
-    --Kurohitsugislash
-    local Kurohitsugi = "rbxassetid://9812787626"
-    --Lunge
-    local lunge = "rbxassetid://9223427332"
-    --Menos Stomp
-    local menosstomp = "rbxassetid://9223427332"
-    --northstar
-    local northstar = "rbxassetid://11781878820"
-    --sikleofdistruction
-    local sickleofdistruction = "rbxassetid://10954096133"
-
-    local chara = game:GetService("Players").LocalPlayer.Character
-    local point = chara.HumanoidRootPart.Position
-    local zbe = game:FindFirstChildWhichIsA("Workspace")
-    local cooldown = true
-
-
-    local function parry()
-        if cooldown == true and getgenv().autoparrys == true then
-            cooldown = false
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = true
-                }
-            }
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-            wait(0.1)
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = false
-                }
-            }
-
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-
-            cooldown = true
-        end
-    end
-    local function parry2()
-        if cooldown == true and getgenv().autoparrys == true then
-            cooldown = false
-            wait(1)
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = true
-                }
-            }
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-            wait(0.1)
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = false
-                }
-            }
-
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-
-            cooldown = true
-        end
-    end
-    local function heavyparry()
-        if cooldown == true and getgenv().autoparrys == true then
-            cooldown = false
-            wait(0.3)
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = true
-                }
-            }
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-            wait(0.2)
-            local args = {
-                [1] = {
-                    ["InputState"] = "Block",
-                    ["Pressing"] = false
-                }
-            }
-
-            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
-
-            cooldown = true
-        end
-    end
-
-    while true do
-            wait()
-        local z = zbe.Live:GetChildren()
-        for i= 1, #z do 
-            if z[i] ~= chara and z[i]:findFirstChild("Humanoid") and z[i]:findFirstChild("HumanoidRootPart") then
-                local enemy = z[i]
+   function autopar()
+    if getgenv().autoparrys == true then
                 
-                local range = 10
-                local range2 = 25
-                local hitchar = z[i]					
+        --Fist
+        local punch1 = "rbxassetid://10811740596"
+        local punch2 = "rbxassetid://10811742187"
+        local punch3 = "rbxassetid://10811749715"
+        local punch4 = "rbxassetid://10811751125"
+        local punch5 = "rbxassetid://10811752253"
+        local heavypunch6 = "rbxassetid://10811661419"
+        --Heavy Sword
+        local hswing1 = "rbxassetid://11329263773"
+        local hswing2 = "rbxassetid://11329264847"
+        local hswing3 = "rbxassetid://11329265450"
+        local hswing4 = "rbxassetid://11329266198"
+        local Heavyhswing5 = "rbxassetid://11329261568"
+        --Dual Sword
+        local dswing1 = "rbxassetid://12570069533"
+        local dswing2 = "rbxassetid://12570070512"
+        local dswing3 = "rbxassetid://12570071355"
+        local dswing4 = "rbxassetid://12570077038"
+        local dswing5 = "rbxassetid://12570077941"
+        local dswing6 = "rbxassetid://12570078708"
+        local Heavydswing7 = "rbxassetid://12570079661"
+        --Two Hand Sword
+        local tswing1 = "rbxassetid://9097941205"
+        local tswing2 = "rbxassetid://9097943535"
+        local tswing3 = "rbxassetid://9097949489"
+        local tswing4 = "rbxassetid://9097953263"
+        local tswing5 = "rbxassetid://9097956778"
+        local Heavytswing6 = "rbxassetid://9105174060"
+        --Vergil 
+        local vswing1 = "rbxassetid://9963911059"
+        local vswing2 = "rbxassetid://9963949721"
+        local vswing3 = "rbxassetid://9964235353"
+        local vswing4 = "rbxassetid://9964685390"
+        local vswing5 = "rbxassetid://9964732053"
+        local Heavyvswing6 = "rbxassetid://9964798760"
+        --One hand sword
+        local Heavyoswing1 = "rbxassetid://9964798760"
+        --Mashima
+        local mswing1 = "rbxassetid://10811740596"
+        local mswing2 = "rbxassetid://10811742187"
+        local mswing3 = "rbxassetid://10811749715"
+        local mswing4 = "rbxassetid://10811751125"
+        local mswing5 = "rbxassetid://10811752253"
+        local Heavymswing6 = "rbxassetid://11710567470"
+        --Hollow
+        local hoswing1 = "rbxassetid://9831765265"
+        local hoswing2 = "rbxassetid://9831767207"
+        local hoswing3 = "rbxassetid://9831768303"
+        local hoswing4 = "rbxassetid://9831772772"
+        local hoswing5 = "rbxassetid://9831778646"
+        local Heavyhoswing6 = "rbxassetid://9831855855"
+        --Taratect
+        local taraswing1 = "rbxassetid://9963911059"
+        local taraswing2 = "rbxassetid://9963949721"
+        local taraswing3 = "rbxassetid://9964235353"
+        local taraswing4 = "rbxassetid://9964685390"
+        local taraswing5 = "rbxassetid://9964732053"
+        local Heavytaraswing6 = "rbxassetid://9964798760"
+        --DualGun
+        local gunswing1 = "rbxassetid://12866837215"
+        local gunswing2 = "rbxassetid://12866838575"
+        local gunswing3 = "rbxassetid://12866842958"
+        local gunswing4 = "rbxassetid://12866844005"
+        local gunswing5 = "rbxassetid://12866845125"
+        local Heavygunswing6 = "rbxassetid://12866849583"
+        --Skills--
+        --Kurohitsugislash
+        local Kurohitsugi = "rbxassetid://9812787626"
+        --Lunge
+        local lunge = "rbxassetid://9223427332"
+        --Menos Stomp
+        local menosstomp = "rbxassetid://9223427332"
+        --northstar
+        local northstar = "rbxassetid://11781878820"
+        --sikleofdistruction
+        local sickleofdistruction = "rbxassetid://10954096133"
 
-                local calculations = (chara.HumanoidRootPart.Position - enemy.HumanoidRootPart.Position).magnitude 
-                local dist = calculations
 
-                if dist < range then
+
+        local chara = game:GetService("Players").LocalPlayer.Character
+        local point = chara.HumanoidRootPart.Position
+        local zbe = game:FindFirstChildWhichIsA("Workspace")
+
+
+        local cooldown = true
+
+
+        local function parry()
+            if cooldown == true and getgenv().autoparrys == true then
+                cooldown = false
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = true
+                    }
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+                wait(0.1)
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = false
+                    }
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+
+                cooldown = true
+            end
+        end
+        local function parry2()
+            if cooldown == true  and getgenv().autoparrys == true then
+                cooldown = false
+                wait(1)
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = true
+                    }
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+                wait(0.1)
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = false
+                    }
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+
+                cooldown = true
+            end
+        end
+        local function heavyparry()
+            if cooldown == true  and getgenv().autoparrys == true then
+                cooldown = false
+                wait(0.3)
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = true
+                    }
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+                wait(0.2)
+                local args = {
+                    [1] = {
+                        ["InputState"] = "Block",
+                        ["Pressing"] = false
+                    }
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Input"):FireServer(unpack(args))
+
+                cooldown = true
+            end
+        end
+
+        while true do
+                wait()
+            local z = zbe.Live:GetChildren()
+            for i= 1, #z do 
+                if z[i] ~= chara and z[i]:findFirstChild("Humanoid") and z[i]:findFirstChild("HumanoidRootPart") then
+                    local enemy = z[i]
                     
-                    for i,v in pairs(enemy.Humanoid:GetPlayingAnimationTracks()) do
-                        if v.Animation.AnimationId == punch1 then
-                            parry()
+                    local range = 10
+                    local range2 = 25
+                    local hitchar = z[i]					
+
+                    local calculations = (chara.HumanoidRootPart.Position - enemy.HumanoidRootPart.Position).magnitude 
+                    local dist = calculations
+
+                    if dist < range then
+                        
+                        for i,v in pairs(enemy.Humanoid:GetPlayingAnimationTracks()) do
+                            if v.Animation.AnimationId == punch1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == punch2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == punch3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == punch4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == punch5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hswing1 then
+                                parry2()
+                            end
+                            if v.Animation.AnimationId == hswing2 then
+                                parry2()
+                            end
+                            if v.Animation.AnimationId == hswing3 then
+                                parry2()
+                            end
+                            if v.Animation.AnimationId == hswing4 then
+                                parry2()
+                            end
+                            if v.Animation.AnimationId == dswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == dswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == dswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == dswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == dswing5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == dswing6 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == tswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == tswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == tswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == tswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == tswing5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == mswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == mswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == mswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == mswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == vswing5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hoswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hoswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hoswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hoswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == hoswing5 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == taraswing1 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == taraswing2 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == taraswing3 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == taraswing4 then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == taraswing5 then
+                                parry()
+                            end
+                            --Skills--
+                            if v.Animation.AnimationId == Kurohitsugi then
+                                parry()
+                            end
+                            if v.Animation.AnimationId == sickleofdistruction then
+                                wait(0.02)
+                                parry()
+                            end
                         end
-                        if v.Animation.AnimationId == punch2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == punch3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == punch4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == punch5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hswing1 then
-                            parry2()
-                        end
-                        if v.Animation.AnimationId == hswing2 then
-                            parry2()
-                        end
-                        if v.Animation.AnimationId == hswing3 then
-                            parry2()
-                        end
-                        if v.Animation.AnimationId == hswing4 then
-                            parry2()
-                        end
-                        if v.Animation.AnimationId == dswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == dswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == dswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == dswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == dswing5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == dswing6 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == tswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == tswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == tswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == tswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == tswing5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == mswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == mswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == mswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == mswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == vswing5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hoswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hoswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hoswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hoswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == hoswing5 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == taraswing1 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == taraswing2 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == taraswing3 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == taraswing4 then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == taraswing5 then
-                            parry()
-                        end
-                        --Skills--
-                        if v.Animation.AnimationId == Kurohitsugi then
-                            parry()
-                        end
-                        if v.Animation.AnimationId == sickleofdistruction then
-                            wait(0.02)
-                            parry()
-                        end
+
                     end
-
-                end
-                if dist < range2 then
-                    
-                    for i,v in pairs(enemy.Humanoid:GetPlayingAnimationTracks()) do
-                            if v.Animation.AnimationId == heavypunch6 then
-                            heavyparry()
+                    if dist < range2 then
+                        
+                        for i,v in pairs(enemy.Humanoid:GetPlayingAnimationTracks()) do
+                                if v.Animation.AnimationId == heavypunch6 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavydswing7 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavyhswing5 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavytswing6 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavyvswing6 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavyoswing1 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavymswing1 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavyhoswing6 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == Heavytaraswing6 then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == lunge then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == menosstomp then
+                                heavyparry()
+                                end
+                                if v.Animation.AnimationId == northstar then
+                                heavyparry()
                             end
-                            if v.Animation.AnimationId == Heavydswing7 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavyhswing5 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavytswing6 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavyvswing6 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavyoswing1 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavymswing1 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavyhoswing6 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == Heavytaraswing6 then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == lunge then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == menosstomp then
-                            heavyparry()
-                            end
-                            if v.Animation.AnimationId == northstar then
-                            heavyparry()
                         end
                     end
                 end
             end
         end
-    end
-    end
 
 
+
+
+    end
+   end
     --Taps
     local Tab = Window:MakeTab({
             Name = "AutoFarm",
@@ -622,14 +630,14 @@ if game.PlaceId == 9096881148 then
     })
 
     Tabs:AddToggle({
+        
         Name = "Unnoticeable Auto Parry",
         Default = false,
         Callback = function(Value)
+            print(Value)
             getgenv().autoparrys = Value
-            Autoparryss()
+            autopar()
         end    
     })
-        
-
 end
 OrionLib:Init()
