@@ -8,15 +8,29 @@ local whitelisted = game:GetService("Players").LocalPlayer.Name
         --Values
 
     --Auto Training
-  getgenv().autofarmtread = true 
-  getgenv().autobenchpress = true 
-  getgenv().autoriatsu = true 
+    getgenv().autofarmtread = true 
+    getgenv().autobenchpress = true 
+    getgenv().autoriatsu = true 
     getgenv().autospirit = true 
+    getgenv().moneypickup = true
     --Combat
     getgenv().Nostun = true
     getgenv().autoparrys = true
     --Functions
-
+    
+    function moneyautopickup()
+    while getgenv().moneypickup == true do
+        wait(0.1)
+        local workspace = game:FindFirstChildWhichIsA("Workspace")
+        local Trash = workspace:FindFirstChild("Effects")
+        local Trashchildren = Trash:GetChildren()
+        for i,v in pairs(Trashchildren) do
+           if v.Name == "Money" then
+               v.CFrame = Pplayers.LocalPlayer.Character.HumanoidRootPart.CFrame
+           end
+       end
+    end
+ end
 
     function autoautofarm()
     if getgenv().autofarmtread == true  then
@@ -576,6 +590,7 @@ local whitelisted = game:GetService("Players").LocalPlayer.Name
             Icon = "rbxassetid://4483345998",
             PremiumOnly = false
         })
+        
         local Tabs = Window:MakeTab({
             Name = "Combat",
             Icon = "rbxassetid://4483345998",
@@ -590,6 +605,14 @@ local whitelisted = game:GetService("Players").LocalPlayer.Name
         Callback = function(Value)
             getgenv().autofarmtread = Value
             autoautofarm()
+        end    
+    })
+    Tab:AddToggle({
+        Name = "Auto Money Pick up",
+        Default = false,
+        Callback = function(Value)
+            getgenv().moneypickup = Value
+            moneyautopickup()
         end    
     })
     Tab:AddToggle({
