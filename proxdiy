@@ -1,7 +1,7 @@
 print("Hello World")
 local whitelisted = game:GetService("Players").LocalPlayer.Name
 
-if game.PlaceId == 9096881148 then
+if true then
 
 
         local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
