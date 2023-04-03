@@ -1,8 +1,5 @@
-print("Hello World")
+
 local whitelisted = game:GetService("Players").LocalPlayer.Name
-
-if true then
-
 
         local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
         local Window = OrionLib:MakeWindow({Name = "Untitled Game  ", HidePremium = false, SaveConfig = true, IntroEnabled = false, ConfigFolder = "OrionTest"})
@@ -639,5 +636,5 @@ if true then
             autopar()
         end    
     })
-end
+
 OrionLib:Init()
